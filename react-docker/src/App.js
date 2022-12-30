@@ -20,7 +20,7 @@ function App() {
     }, []);
     return (
         <div className="App">
-            <h1>My products Products</h1>
+            <h1>Yuu's products Products</h1>
             {products.map((product) => {
                 return (
                     <div key={product._id}>
