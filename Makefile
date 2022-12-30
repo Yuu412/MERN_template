@@ -38,3 +38,13 @@ in-db:
 	@echo "mongo.dbのコンテナに入ります"
 	@echo "================================="
 	docker-compose exec $(db) bash
+
+localhost:
+	@echo " "
+	@echo "localhostのIPアドレスを表示するためには、この後以下のコマンドを実行してください。"
+	@echo "その後、.envファイルの、LOCALHOSTに表示されたIPアドレスを指定してください。"
+	@echo " "
+	@echo "=== 実行するコマンド ==============="
+	@echo "cat /etc/hosts | awk 'END{print $1}' | sed -e 's/[0-9]\+$/1/g'"
+	@echo "================================="
+	docker-compose exec $(backend) bash
