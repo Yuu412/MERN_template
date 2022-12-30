@@ -23,7 +23,7 @@ services:
       context: './express-docker'
       dockerfile: Dockerfile
     ports:
-      - 5500:5500
+      - 5050:5050
     container_name: express-container
     networks:
       - mern-stack-network
@@ -31,6 +31,8 @@ services:
       - ./express-docker:/app
     depends_on:
       - mongo
+    extra_hosts:
+      - localhost:172.29.0.1
     command: >
       bash -c "npm install &&
       npm install nodemon -g &&
